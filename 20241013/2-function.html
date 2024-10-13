@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 自訂函式function，名字為hello，可以傳遞參數(可指定預設值)，他的工作是印出hello world
+    function hello(name = 'to You') {
+      console.log(`hello world,${name}!!`)
+    }
+
+    // hello(); //為名hello函式，透過()符號進行呼叫/執行
+    // hello('Jasmine');
+    hello();
+
+    console.clear();
+
+    //宣告一個變數為fn的變數
+    varHello1 = function (name) {  //匿名函式，沒有名字的fn
+      console.log(`hello ${name}!!`);
+    }
+    varHello2 = function sayHello(name) {  //帶名字的fn
+      console.log(`hello ${name}!!`);
+    }
+      //待修改 (function () {
+      //   console.log('hello world');
+      // }); //左邊()匿名函式宣告，右邊()直接執行
+
+    console.clear();
+
+    say1 = function(name){
+      str = 'hello' + name;
+      return str;
+      //fn遇到return工作就會結束
+    }
+
+    ans = say1('Jasmine');
+    console.log(ans);
+    say1 = function(name){
+      str = 'hello' + name;
+      return str;
+      //fn遇到return工作就會結束
+    }
+
+    ans = say1('Jasmine');
+    console.log(ans);
+
+    //////
+
+    say2 = function(name){
+      return 'hello' + name;
+    }
+
+    console.log(say2('Jasmine'));
+    
+    say3 = function(name){
+      console.log('-------');
+      return 'hello' + name;
+    }
+
+    console.log(say3('Jasmine'));
+
+  </script>
+</body>
+
+</html>
