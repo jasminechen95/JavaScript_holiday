@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const now = Date(); //字串
+    const time = new Date(); //時間物件，月份定義為0~11，代表一月~十二月
+    const lastTime1 = new Date(2024, 11, 31, 23, 59, 59, 999);
+    const lastTime2 = new Date('2024-12-31, 23, 59, 59, 999');
+
+    const monthStr = ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'];
+    const dayStr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+
+    let ans;
+    ans = time.getFullYear(); //西元年
+    ans = monthStr[time.getMonth()]; //月份 0~11
+    ans = time.getDate(); //日期 1~31
+    ans = time.getHours();
+    ans = time.getMinutes();
+    ans = time.getSeconds();
+    ans = time.getMilliseconds();
+    ans = dayStr[time.getDay()]; //0~6
+    ans = time.getTime(); //時間戳記，單位是毫秒，將所有的時間換算成總毫秒
+
+    console.log(ans);
+
+    //計算跨年倒數日時分秒，利用 兩筆時間物件的getTime 相差毫秒，推算 月日時分秒
+    //--------------------------------------------------------------------------------
+    // let sec = 135;
+
+    // const mm = Math.floor(sec / 60);
+    // const ss = sec % 60; //sec除以60的餘數
+    /*其他寫法
+    ss = sec - 60 * mm;
+    mm = Math.floor(sec / 60);
+   */
+
+    //let mm = 2, ss = 15;
+    // console.log(`${mm}分${ss}秒`);
+
+
+    // let sec = 4215;
+    // let hh = 0, mm = 0, ss = 0;
+
+    // ss = sec % 60;
+    // mm = Math.floor(sec / 60) % 60;
+    // hh = Math.floor(Math.floor(sec / 60) / 60);
+
+    // console.log(`${hh}時${mm}分${ss}秒`);
+
+    let sec = 90061;
+    let dd = 0, hh = 0, mm = 0, ss = 0;
+
+    ss = sec % 60;
+    mm = Math.floor(sec / 60) % 60;
+    // hh = Math.floor(Math.floor(sec / 60) / 60) % 24;
+    // hh = Math.floor(sec / 3600) % 24;
+    hh = Math.floor(sec / 60 / 60) % 24;
+    // dd = Math.floor(Math.floor(sec / 60) / 60 / 24);
+    // dd = Math.floor(sec / 86400);
+    dd = Math.floor(sec / 60 / 60 / 24);
+
+    // dd = 1, hh = 1, mm = 1, ss = 1;
+    console.log(`${dd}天${hh}時${mm}分${ss}秒`);
+  </script>
+</body>
+
+</html>
